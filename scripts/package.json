@@ -1,0 +1,6 @@
+{
+  "name": "midly-monorepo-scripts",
+  "version": "1.6.4",
+  "description": "Shared CI scripts for robo tools",
+  "license": "UNLICENSED"
+}

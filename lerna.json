@@ -1,0 +1,18 @@
+{
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "command": {
+    "version": {
+      "conventionalCommits": true,
+      "message": "chore(release): publish [skip ci]",
+      "yes": true
+    }
+  },
+  "packages": [
+    "packages/*",
+    "packages/@*/*",
+    "packages/shared-ui/*",
+    "scripts"
+  ]
+}

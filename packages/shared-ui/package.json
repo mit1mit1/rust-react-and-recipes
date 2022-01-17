@@ -1,0 +1,13 @@
+{
+  "name": "shared-ui",
+  "version": "1.38.0",
+  "description": "Shared components for future use outside of Rust Recipes",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "yarn build:constants && yarn build:types && yarn build:mocks && yarn build:components",
+    "build:components": "yarn --cwd components build",
+    "build:constants": "yarn --cwd constants build",
+    "build:mocks": "yarn --cwd mocks build",
+    "build:types": "yarn --cwd types build"
+  }
+}
