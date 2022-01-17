@@ -1,7 +1,7 @@
 [package]
 name = "bff"
 version = "0.1.0"
-authors = ["mitchellroberts11 <mitchell.roberts@iress.com>"]
+authors = ["mitchellroberts11 <mitchell.roberts11@gmail.com>"]
 edition = "2018"
 
 [lib]
