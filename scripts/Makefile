@@ -17,12 +17,8 @@ export NC=\033[0m
 export BOLD=\033[1m
 export REGULAR=\e[0m
 
-# Project-level constants
-ifeq (${PACKAGE},retirement)
-  export APP_NAME=portal-robo
-else
-  export APP_NAME=${PACKAGE}
-endif
+# Set default package for now
+export PACKAGE=rust-recipes
 
 # Common
 export CI_BASE=./ci
@@ -62,12 +58,9 @@ all: install build package plan deploy
 
 .PHONY: plan deploy install build package output ci_unit_test destroy publish promote get-staging-artifacts get-production-artifacts ci_ui_verification_test
 
-build: output version
+build: output
 	echo -e "--- ${GREEN}Building $(PACKAGE) to '$(ARTIFACT_PATH_LOCAL)' ...${NC}"
 	$(YARN) run build:$(PACKAGE)
-
-new_version:
-	$(YARN) run new-version ${FLAGS}
 
 install:
 	echo -e "--- ${GREEN}Running Install ...${NC}"

@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 enum RecipeStatus {
@@ -39,7 +38,7 @@ const Recipe = (props: RecipeProps) => {
     <h2>{props.recipe.title}</h2>
     <h3>By {props.recipe.author}</h3>
     {props.recipe.steps.map(function(step, i){
-        return `{i}. {step}`;
+        return <div>{i}. {step}</div>;
     })}
   </>
 }

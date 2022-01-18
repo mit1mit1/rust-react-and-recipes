@@ -11,8 +11,7 @@
   },
   "packages": [
     "packages/*",
-    "packages/@*/*",
-    "packages/shared-ui/*",
+    "packages/*/*",
     "scripts"
   ]
 }

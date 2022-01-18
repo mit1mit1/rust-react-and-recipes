@@ -1,5 +1,5 @@
 {
-  "name": "ui",
+  "name": "rust-recipes-ui",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -39,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-config-react-app": "^7.0.0"
   }
 }

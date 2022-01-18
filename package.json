@@ -8,7 +8,7 @@
     "@typescript-eslint/eslint-plugin": "^2.16.0",
     "@typescript-eslint/parser": "^2.16.0",
     "concurrently": "^5.3.0",
-    "eslint": "^6.8.0",
+    "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-cypress": "^2.10.3",
@@ -42,12 +42,13 @@
     "prettier": "prettier --write \"packages/**/src/**/*.{ts,tsx}\"",
     "prettier:check": "prettier --check \"packages/**/src/**/*.{ts,tsx}\"",
     "test:shared-ui:ci": "lerna run --scope shared-ui-* test:ci",
-    "build:shared-ui": "yarn --cwd packages/shared-ui build"
+    "build:rust-recipes": "lerna run --scope rust-recipes-* build",
+    "build:shared-ui": "yarn --cwd packages/shared-ui build",
+    "start:rust-recipes": "lerna run --scope rust-recipes-* start"
   },
   "workspaces": [
     "packages/*",
-    "packages/rust-recipes/*",
-    "packages/shared-ui/*",
+    "packages/*/*",
     "scripts"
   ]
 }
