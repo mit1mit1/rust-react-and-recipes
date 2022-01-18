@@ -41,7 +41,8 @@
     "changed": "lerna changed --include-merged-tags",
     "prettier": "prettier --write \"packages/**/src/**/*.{ts,tsx}\"",
     "prettier:check": "prettier --check \"packages/**/src/**/*.{ts,tsx}\"",
-    "test:shared-ui:ci": "lerna run --scope shared-ui-* test:ci",
+    "test:rust-recipes": "lerna run --scope rust-recipes-* test",
+    "test:shared-ui": "lerna run --scope shared-ui-* test",
     "build:rust-recipes": "lerna run --scope rust-recipes-* build",
     "build:shared-ui": "yarn --cwd packages/shared-ui build",
     "start:rust-recipes": "lerna run --scope rust-recipes-* start"
