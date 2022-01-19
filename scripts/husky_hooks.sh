@@ -9,7 +9,7 @@ _check_exit_status() {
 }
 
 CHANGED_PACKAGES=$(yarn changed)
-APP_PACKAGES=(rust-recipes)
+APP_PACKAGES=(rust-recipes shared-ui)
 
 if [[ -z "${CHANGED_PACKAGES}" ]]; then
   echo "No changes are detected in packages..."
@@ -21,15 +21,6 @@ else
   IFS=$'\n' read -rd '' -a array <<<"$CHANGED_PACKAGES"
   for PACKAGE in "${array[@]}"; do
     if [[ " ${APP_PACKAGES[@]} " =~ " ${PACKAGE} " ]]; then
-      echo "Unit test: ${PACKAGE}"
-      yarn test:"${PACKAGE}"
-      _check_exit_status $?
-
-      echo "E2E test: ${PACKAGE}"
-      yarn e2e:"${PACKAGE}" --config video=false
-      _check_exit_status $?
-    fi
-    if [[ ${PACKAGE} == 'shared-ui' ]]; then
       echo "Unit test: ${PACKAGE}"
       yarn test:"${PACKAGE}"
       _check_exit_status $?
