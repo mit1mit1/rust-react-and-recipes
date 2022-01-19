@@ -1,0 +1,4 @@
+react-app-env.d.ts
+node_modules
+coverage
+packages/**/build

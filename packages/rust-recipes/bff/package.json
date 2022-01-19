@@ -1,0 +1,9 @@
+{
+  "name": "rust-recipes-bff",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {},
+  "scripts": {
+    "build": "cargo build"
+  }
+}
