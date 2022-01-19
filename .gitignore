@@ -1,5 +1,5 @@
 node_modules
 build
 yarn-error.log
-cypress/screenshots
-cypress/videos
+packages/rust-recipes/e2e/cypress/screenshots
+packages/rust-recipes/e2e/cypress/videos/

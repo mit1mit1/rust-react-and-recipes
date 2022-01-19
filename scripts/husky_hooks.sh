@@ -9,7 +9,7 @@ _check_exit_status() {
 }
 
 CHANGED_PACKAGES=$(yarn changed)
-APP_PACKAGES=(goals retirement risk-profiler)
+APP_PACKAGES=(rust-recipes)
 
 if [[ -z "${CHANGED_PACKAGES}" ]]; then
   echo "No changes are detected in packages..."
@@ -29,7 +29,7 @@ else
       yarn e2e:"${PACKAGE}":ci --config video=false
       _check_exit_status $?
     fi
-    if [[ ${PACKAGE} == '@robo-advice-shared' ]]; then
+    if [[ ${PACKAGE} == 'shared-ui' ]]; then
       echo "Unit test: ${PACKAGE}"
       yarn test:"${PACKAGE}":ci
       _check_exit_status $?

@@ -67,6 +67,7 @@ install:
 	$(YARN) bootstrap --force-local
 	$(YARN) link
 	$(YARN) build:shared-ui
+	$(YARN) husky install
 
 changed_packages:
 ifeq ($(USE_LOCAL_YARN),true)

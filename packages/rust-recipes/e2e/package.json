@@ -5,7 +5,7 @@
   "dependencies": {},
   "scripts": {
     "start:ui": "yarn --cwd ../ui start",
-    "wait-on": "wait-on https://localhost:3000 && yarn cypress run",
+    "wait-on": "wait-on http://localhost:3000 && yarn cypress run",
     "test": "concurrently --kill-others --success first \"yarn run start:ui\" \"yarn run wait-on\""
   },
   "eslintConfig": {},
