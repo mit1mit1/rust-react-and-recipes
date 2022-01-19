@@ -22,16 +22,16 @@ else
   for PACKAGE in "${array[@]}"; do
     if [[ " ${APP_PACKAGES[@]} " =~ " ${PACKAGE} " ]]; then
       echo "Unit test: ${PACKAGE}"
-      yarn test:"${PACKAGE}":ci
+      yarn test:"${PACKAGE}"
       _check_exit_status $?
 
       echo "E2E test: ${PACKAGE}"
-      yarn e2e:"${PACKAGE}":ci --config video=false
+      yarn e2e:"${PACKAGE}" --config video=false
       _check_exit_status $?
     fi
     if [[ ${PACKAGE} == 'shared-ui' ]]; then
       echo "Unit test: ${PACKAGE}"
-      yarn test:"${PACKAGE}":ci
+      yarn test:"${PACKAGE}"
       _check_exit_status $?
     fi
   done || exit 1
