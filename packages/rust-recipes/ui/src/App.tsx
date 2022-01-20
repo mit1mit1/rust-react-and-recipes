@@ -62,7 +62,7 @@ function App() {
       <CssBaseline />
       <Container maxWidth="md">
         <Box sx={{ my: 8 }}>
-          <div>Recipes!</div>
+          <h1>Recipes!</h1>
           {recipe_list.map(function (recipe, i) {
             return <RecipeBox recipe={recipe} />;
           })}
