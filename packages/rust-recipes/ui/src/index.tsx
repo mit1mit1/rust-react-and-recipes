@@ -3,10 +3,11 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { fib } from "wasm-bff";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App fibResultFunction={fib} />
   </React.StrictMode>,
   document.getElementById("root")
 );

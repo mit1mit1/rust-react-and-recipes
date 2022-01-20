@@ -56,7 +56,12 @@ const RecipeBox = (props: RecipeProps) => {
   );
 };
 
-function App() {
+interface AppProps {
+  fibResultFunction: (num: number) => number;
+}
+
+function App(props: AppProps) {
+  console.log(props.fibResultFunction(10));
   return (
     <>
       <CssBaseline />
