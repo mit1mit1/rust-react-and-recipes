@@ -57,11 +57,11 @@ const RecipeBox = (props: RecipeProps) => {
 };
 
 interface AppProps {
-  fibResultFunction: (num: number) => number;
+  hit_rust: () => Array<number>;
 }
 
 function App(props: AppProps) {
-  console.log(props.fibResultFunction(10));
+  console.log(props.hit_rust());
   return (
     <>
       <CssBaseline />
