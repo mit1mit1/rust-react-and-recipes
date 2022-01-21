@@ -1,9 +1,16 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import App from "./App";
+import App, {Recipe, RecipeStatus} from "./App";
+
+const fake_recipe: Recipe = {
+    author: "Mitch",
+    title: "Nacho Libre",
+    status: RecipeStatus.DRAFT,
+    steps: ["Step 1 cook", "step 2 eat"]
+}
 
 test("renders page title", () => {
-  render(<App hit_rust={() => [1, 2, 3, 4]} />);
+  render(<App hit_rust={() => fake_recipe} />);
   const heading = screen.getByText(/Recipes/i);
   expect(heading).toBeInTheDocument();
 });

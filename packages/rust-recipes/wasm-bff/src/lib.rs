@@ -1,5 +1,4 @@
 use wasm_bindgen::prelude::*;
-use std::collections::HashMap;
 
 
 #[wasm_bindgen]
@@ -10,20 +9,22 @@ pub fn fib() -> String {
 use serde::{Serialize, Deserialize};
 
 #[derive(Serialize, Deserialize)]
-pub struct Example {
-    pub field1: HashMap<u32, String>,
-    pub field2: Vec<Vec<f32>>,
-    pub field3: [f32; 4],
+pub struct RustRecipe {
+    pub author: String,
+    pub title: String,
+    pub status: String,
+    pub steps: Vec<String>,
 }
 
 #[wasm_bindgen]
 pub fn send_example_to_js() -> JsValue {
-    let mut field1 = HashMap::new();
-    field1.insert(0, String::from("ex"));
-    let example = Example {
-        field1,
-        field2: vec![vec![1., 2.], vec![3., 4.]],
-        field3: [1., 2., 3., 4.]
+    let mut string1 = String::from("str1");
+    let mut string2 = String::from("str2");
+    let example = RustRecipe {
+      author: String::from("str1"),
+      title: String::from("str2"),
+      status: String::from("str1"),
+      steps: vec![String::from("str1"), String::from("str2")],
     };
 
     JsValue::from_serde(&example).unwrap()
@@ -31,5 +32,5 @@ pub fn send_example_to_js() -> JsValue {
 
 #[wasm_bindgen]
 pub fn receive_example_from_js(val: &JsValue) {
-    let example: Example = val.into_serde().unwrap();
+    let example: RustRecipe = val.into_serde().unwrap();
 }

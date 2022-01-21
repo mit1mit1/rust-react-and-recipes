@@ -4,13 +4,13 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 
-enum RecipeStatus {
+export enum RecipeStatus {
   DRAFT,
   UNTRIED,
   TESTED,
 }
 
-interface Recipe {
+export interface Recipe {
   author: string;
   title: string;
   status: RecipeStatus;
@@ -57,7 +57,7 @@ const RecipeBox = (props: RecipeProps) => {
 };
 
 interface AppProps {
-  hit_rust: () => Array<number>;
+  hit_rust: () => Recipe;
 }
 
 function App(props: AppProps) {
