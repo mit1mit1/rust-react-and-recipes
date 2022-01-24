@@ -3,11 +3,11 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { send_example_to_js } from "wasm-bff";
+import { send_recipes_to_js } from "wasm-bff";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App hit_rust={send_example_to_js} />
+    <App get_recipes={send_recipes_to_js} />
   </React.StrictMode>,
   document.getElementById("root")
 );

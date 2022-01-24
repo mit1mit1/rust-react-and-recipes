@@ -17,25 +17,6 @@ export interface Recipe {
   steps: Array<string>;
 }
 
-const recipe_list: Array<Recipe> = [
-  {
-    author: "Mitch",
-    title: "Nachos",
-    status: RecipeStatus.TESTED,
-    steps: ["Get chips", "Get cheese", "Cook up"],
-  },
-  {
-    author: "Anon",
-    title: "Salmon Pasta",
-    status: RecipeStatus.DRAFT,
-    steps: [
-      "Fry salmon with skin on",
-      "Boil pasta",
-      "Toss together with canned pesto",
-    ],
-  },
-];
-
 interface RecipeProps {
   recipe: Recipe;
 }
@@ -57,18 +38,18 @@ const RecipeBox = (props: RecipeProps) => {
 };
 
 interface AppProps {
-  hit_rust: () => Recipe;
+  get_recipes: () => Array<Recipe>;
 }
 
 function App(props: AppProps) {
-  console.log(props.hit_rust());
+  console.log(props.get_recipes());
   return (
     <>
       <CssBaseline />
       <Container maxWidth="md">
         <Box sx={{ my: 8 }}>
           <h1>Recipes!</h1>
-          {recipe_list.map(function (recipe, i) {
+          {props.get_recipes().map(function (recipe, i) {
             return <RecipeBox recipe={recipe} />;
           })}
         </Box>

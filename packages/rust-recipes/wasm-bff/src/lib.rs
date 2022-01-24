@@ -1,11 +1,4 @@
 use wasm_bindgen::prelude::*;
-
-
-#[wasm_bindgen]
-pub fn fib() -> String {
-   return String::from("Test rusty string");
-}
-
 use serde::{Serialize, Deserialize};
 
 #[derive(Serialize, Deserialize)]
@@ -16,18 +9,46 @@ pub struct RustRecipe {
     pub steps: Vec<String>,
 }
 
+
+// const mock_recipe_list: Array<Recipe> = [
+//   {
+//     author: "Mitch",
+//     title: "Nachos",
+//     status: RecipeStatus.TESTED,
+//     steps: ["Get chips", "Get cheese", "Cook up"],
+//   },
+//   {
+//     author: "Anon",
+//     title: "Salmon Pasta",
+//     status: RecipeStatus.DRAFT,
+//     steps: [
+//       "Fry salmon with skin on",
+//       "Boil pasta",
+//       "Toss together with canned pesto",
+//     ],
+//   },
+// ];
+
 #[wasm_bindgen]
-pub fn send_example_to_js() -> JsValue {
-    let mut string1 = String::from("str1");
-    let mut string2 = String::from("str2");
-    let example = RustRecipe {
-      author: String::from("str1"),
-      title: String::from("str2"),
-      status: String::from("str1"),
-      steps: vec![String::from("str1"), String::from("str2")],
+pub fn send_recipes_to_js() -> JsValue {
+    let recipe1 = RustRecipe {
+      author: String::from("Mitch"),
+      title: String::from("Nachos"),
+      status: String::from("TESTED"),
+      steps: vec![String::from("Get chips"), String::from("Get cheese"), String::from("Cook up")],
     };
 
-    JsValue::from_serde(&example).unwrap()
+    let recipe2 = RustRecipe {
+        author: String::from("Anon"),
+        title: String::from("Salmon Pasta"),
+        status: String::from("DRAFT"),
+        steps: vec![String::from("Fry salmon with skin on"), String::from("Boil pasta"), String::from("Toss together with canned pesto")],
+      };
+
+    let recipes = vec![recipe1, recipe2];
+
+
+    JsValue::from_serde(&recipes).unwrap()
 }
 
 #[wasm_bindgen]
