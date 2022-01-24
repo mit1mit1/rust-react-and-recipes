@@ -28,7 +28,7 @@ const RecipeBox = (props: RecipeProps) => {
       <h3>By {props.recipe.author}</h3>
       {props.recipe.steps.map(function (step, i) {
         return (
-          <div>
+          <div key={step}>
             {i}. {step}
           </div>
         );
@@ -42,7 +42,6 @@ interface AppProps {
 }
 
 function App(props: AppProps) {
-  console.log(props.get_recipes());
   return (
     <>
       <CssBaseline />
@@ -50,7 +49,7 @@ function App(props: AppProps) {
         <Box sx={{ my: 8 }}>
           <h1>Recipes!</h1>
           {props.get_recipes().map(function (recipe, i) {
-            return <RecipeBox recipe={recipe} />;
+            return <RecipeBox recipe={recipe} key={recipe.title} />;
           })}
         </Box>
       </Container>
