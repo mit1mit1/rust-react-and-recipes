@@ -3,39 +3,8 @@ import "./App.css";
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
-
-export enum RecipeStatus {
-  DRAFT,
-  UNTRIED,
-  TESTED,
-}
-
-export interface Recipe {
-  author: string;
-  title: string;
-  status: RecipeStatus;
-  steps: Array<string>;
-}
-
-interface RecipeProps {
-  recipe: Recipe;
-}
-
-const RecipeBox = (props: RecipeProps) => {
-  return (
-    <>
-      <h2>{props.recipe.title}</h2>
-      <h3>By {props.recipe.author}</h3>
-      {props.recipe.steps.map(function (step, i) {
-        return (
-          <div key={step}>
-            {i}. {step}
-          </div>
-        );
-      })}
-    </>
-  );
-};
+import { Recipe } from "./types";
+import RecipeBox from "./components/RecipeBox";
 
 interface AppProps {
   get_recipes: () => Array<Recipe>;

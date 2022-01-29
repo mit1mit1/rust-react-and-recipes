@@ -1,12 +1,14 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import App, { Recipe, RecipeStatus } from "./App";
+import App from "./App";
+import { Recipe, RecipeStatus } from "./types";
 
 const fake_recipe: Recipe = {
   author: "Mitch",
   title: "Nacho Libre",
   status: RecipeStatus.DRAFT,
   steps: ["Step 1 cook", "step 2 eat"],
+  ingredients: [],
 };
 
 test("renders page title", () => {
