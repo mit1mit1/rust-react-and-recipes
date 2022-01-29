@@ -1,13 +1,13 @@
 export enum RecipeStatus {
-  DRAFT,
-  UNTRIED,
-  TESTED,
+  DRAFT = "DRAFT",
+  UNTRIED = "UNTRIED",
+  TESTED = "TESTED",
 }
 
 export interface Recipe {
   author: string;
   title: string;
-  status: RecipeStatus;
+  status: RecipeStatus | string;
   steps: Array<string>;
   ingredients: Array<Ingredient>;
   source_title?: string;
