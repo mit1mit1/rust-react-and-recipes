@@ -2,8 +2,8 @@
     "author": "Anon",
     "title": "Salmon Pasta From Json",
     "status": "DRAFT",
-    "source_name": "Internet",
-    "source_href": "www.google.com",
+    "source_title": "Internet",
+    "source_url": "www.google.com",
     "steps": [
         "Fry salmon with skin on",
         "Boil pasta",

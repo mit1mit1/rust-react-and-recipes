@@ -4,14 +4,16 @@ interface RecipeBoxProps {
   recipe: Recipe;
 }
 
-const RecipeBox = (props: RecipeBoxProps) => {
+const RecipeBox = ({ recipe }: RecipeBoxProps) => {
   return (
     <>
-      <h2>{props.recipe.title}</h2>
-      <h3>By {props.recipe.author}</h3>
+      <h2>{recipe.title}</h2>
+      <h3>By {recipe.author}</h3>
+      {recipe.source_title ? <div>Source: {recipe.source_title}</div> : ""}
+      {recipe.source_url ? <a>{recipe.source_url}</a> : ""}
       <h4>Ingredients:</h4>
       <ul>
-        {props.recipe.ingredients.map(function (ingredient, i) {
+        {recipe.ingredients.map(function (ingredient, i) {
           return (
             <li key={ingredient.name}>
               {ingredient.name}, {ingredient.amount} {ingredient.unit}
@@ -21,7 +23,7 @@ const RecipeBox = (props: RecipeBoxProps) => {
       </ul>
       <h4>Steps:</h4>
       <ol>
-        {props.recipe.steps.map(function (step, i) {
+        {recipe.steps.map(function (step, i) {
           return <li key={step}>{step}</li>;
         })}
       </ol>
