@@ -1,6 +1,6 @@
 node_modules
 build
 yarn-error.log
-packages/rust-recipes/e2e/cypress/screenshots
-packages/rust-recipes/e2e/cypress/videos
-packages/rust-recipes/wasm-bff/target
+packages/react-recipes/e2e/cypress/screenshots
+packages/react-recipes/e2e/cypress/videos
+packages/react-recipes/wasm-bff/target

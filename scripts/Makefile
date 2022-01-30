@@ -18,7 +18,7 @@ export BOLD=\033[1m
 export REGULAR=\e[0m
 
 # Set default package for now
-export PACKAGE=rust-recipes
+export PACKAGE=react-recipes
 
 # Common
 export CI_BASE=./ci

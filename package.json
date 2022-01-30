@@ -1,5 +1,5 @@
 {
-  "name": "rust-recipes",
+  "name": "react-recipes",
   "private": true,
   "description": "Rust Recipes App root package for global linting and commits hooks",
   "devDependencies": {
@@ -40,11 +40,11 @@
     "new-version": "lerna version --no-private",
     "prettier": "prettier --write \"packages/**/src/**/*.{ts,tsx}\"",
     "prettier:check": "prettier --check \"packages/**/src/**/*.{ts,tsx}\"",
-    "test:rust-recipes": "lerna run --scope rust-recipes-* test",
+    "test:react-recipes": "lerna run --scope react-recipes-* test",
     "test:shared-ui": "lerna run --scope shared-ui-* test",
-    "build:rust-recipes": "lerna run --scope rust-recipes-* build",
+    "build:react-recipes": "lerna run --scope react-recipes-* build",
     "build:shared-ui": "yarn --cwd packages/shared-ui build",
-    "start:rust-recipes": "lerna run --scope rust-recipes-* start"
+    "start:react-recipes": "lerna run --scope react-recipes-* start"
   },
   "workspaces": [
     "packages/*",

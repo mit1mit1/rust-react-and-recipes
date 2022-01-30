@@ -9,7 +9,7 @@ _check_exit_status() {
 }
 
 CHANGED_PACKAGES=$(yarn changed)
-APP_PACKAGES=(rust-recipes shared-ui)
+APP_PACKAGES=(react-recipes shared-ui)
 
 if [[ -z "${CHANGED_PACKAGES}" ]]; then
   echo "No changes are detected in packages..."

@@ -18420,9 +18420,6 @@ warning@^4.0.2:
   dependencies:
     loose-envify "^1.0.0"
 
-"wasm-bff@link:packages/rust-recipes/wasm-bff-build":
-  version "0.1.0"
-
 wasm-dce@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/wasm-dce/-/wasm-dce-1.0.2.tgz#7e21e566fa17c61e8e257742a377a5bdb8f2e4f5"
