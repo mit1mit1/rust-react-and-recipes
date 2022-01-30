@@ -8,7 +8,7 @@ export interface Recipe {
   author: string;
   title: string;
   status: RecipeStatus | string;
-  steps: Array<string>;
+  steps: Array<Array<string | number>>;
   ingredients: Array<Ingredient>;
   source_title?: string;
   source_url?: string;

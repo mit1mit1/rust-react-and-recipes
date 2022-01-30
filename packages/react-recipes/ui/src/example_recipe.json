@@ -5,9 +5,9 @@
     "source_title": "Internet",
     "source_url": "www.google.com",
     "steps": [
-        "Fry salmon with skin on",
-        "Boil pasta",
-        "Toss together with canned pesto"
+        ["Fry salmon with skin on"],
+        ["Boil", 100, "grams of pasta"],
+        ["Toss together with canned pesto"]
     ],
     "ingredients": [
         {

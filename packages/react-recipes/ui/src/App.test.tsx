@@ -7,7 +7,7 @@ const fake_recipe: Recipe = {
   author: "Mitch",
   title: "Nacho Libre",
   status: RecipeStatus.DRAFT,
-  steps: ["Step 1 cook", "step 2 eat"],
+  steps: [["Step 1 cook"], ["step 2 eat"]],
   ingredients: [],
 };
 
