@@ -1,13 +1,15 @@
-import { Recipe } from "../types";
+import { Recipe, TemperatureScale } from "../types";
 import Slider from "@mui/material/Slider";
 import { useState } from "react";
+import StepList from "./StepList";
 
 interface RecipeBoxProps {
   recipe: Recipe;
+  temperature_scale: TemperatureScale;
 }
 
-const RecipeBox = ({ recipe }: RecipeBoxProps) => {
-  const [scale, setScale] = useState(1);
+const RecipeBox = ({ recipe, temperature_scale }: RecipeBoxProps) => {
+  const [multiplier, setMultiplier] = useState(1);
 
   return (
     <>
@@ -26,7 +28,7 @@ const RecipeBox = ({ recipe }: RecipeBoxProps) => {
         // getAriaValueText={valuetext}
         valueLabelDisplay="auto"
         onChange={(e, value) =>
-          setScale(typeof value === "number" ? value : value[0])
+          setMultiplier(typeof value === "number" ? value : value[0])
         }
         step={0.5}
         marks
@@ -39,31 +41,18 @@ const RecipeBox = ({ recipe }: RecipeBoxProps) => {
           return (
             <li key={ingredient.name}>
               {ingredient.name},{" "}
-              {ingredient.amount ? ingredient.amount * scale : ""}{" "}
+              {ingredient.amount ? ingredient.amount * multiplier : ""}{" "}
               {ingredient.unit} <i>{ingredient.description}</i>
             </li>
           );
         })}
       </ul>
       <h4>Steps:</h4>
-      <ol>
-        {recipe.steps.map(function (step, i) {
-          return (
-            <li key={step[0]}>
-              {step.map(function (substring) {
-                return (
-                  <span>
-                    {" "}
-                    {typeof substring === "number"
-                      ? substring * scale
-                      : substring}{" "}
-                  </span>
-                );
-              })}
-            </li>
-          );
-        })}
-      </ol>
+      <StepList
+        steps={recipe.steps}
+        multiplier={multiplier}
+        temperature_scale={temperature_scale}
+      />
     </>
   );
 };
