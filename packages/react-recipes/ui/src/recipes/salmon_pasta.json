@@ -1,0 +1,29 @@
+{
+    "author": "Anon",
+    "title": "Salmon Pasta From Json",
+    "status": "DRAFT",
+    "source_title": "Internet",
+    "source_url": "www.google.com",
+    "ingredients": [
+        {
+            "name": "salmon",
+            "amount": 100,
+            "unit": "grams"
+        },
+        {
+            "name": "pasta",
+            "amount": 100,
+            "unit": "grams"
+        },
+        {
+            "name": "pesto",
+            "amount": 100,
+            "unit": "grams"
+        }
+    ],
+    "steps": [
+        ["Fry salmon with skin on"],
+        ["Boil", 100, "grams of pasta"],
+        ["Toss together with canned pesto"]
+    ]
+}
